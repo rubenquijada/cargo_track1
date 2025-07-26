@@ -27,7 +27,7 @@ export default function UserProfile() {
 
   if (!user) {
     return (
-      <p className="text-white text-center mt-8">
+      <p className="text-black text-center mt-8">
         Cargando usuario...
       </p>
     );
@@ -35,12 +35,12 @@ export default function UserProfile() {
 
   return (
     <motion.div
-      className="flex justify-center items-center min-h-screen bg-black text-white font-sans p-8"
+      className="flex justify-center items-center min-h-screen bg-transparent text-white font-sans p-8"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center p-8 rounded-xl max-w-xl w-full shadow-lg bg-gray-900">
+      <div className="flex flex-col items-center p-8 rounded-xl max-w-xl w-full shadow-lg bg-gray-200">
         <div className="bg-white rounded-full w-32 h-32 flex items-center justify-center mb-6">
           <svg
             className="w-20 h-20 text-black"
@@ -51,23 +51,23 @@ export default function UserProfile() {
           </svg>
         </div>
 
-        <h1 className="text-3xl font-bold mb-2">{user.nombre}</h1>
+        <h1 className="text-3xl font-bold mb-2 text-gray-600">{user.nombre}</h1>
         <p className="text-lg text-gray-400 mb-10">{user.email}</p>
 
         <div className="text-center w-full mb-10">
-          <h2 className="text-2xl font-semibold mb-4">Información</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-600">Información</h2>
           <div className="text-lg leading-relaxed max-w-md mx-auto flex flex-col gap-3">
             <div className="flex justify-between items-center w-full">
-              <span className="font-bold text-gray-400">Teléfono:</span>
-              <span className="text-gray-300">{user.telefono}</span>
+              <span className="font-bold text-gray-600">Teléfono:</span>
+              <span className="text-gray-400">{user.telefono}</span>
             </div>
             <div className="flex justify-between items-center w-full">
-              <span className="font-bold text-gray-400">Email:</span>
-              <span className="text-gray-300">{user.email}</span>
+              <span className="font-bold text-gray-600">Email:</span>
+              <span className="text-gray-400">{user.email}</span>
             </div>
             <div className="flex justify-between items-center w-full">
-              <span className="font-bold text-gray-400">Cédula:</span>
-              <span className="text-gray-300">{user.cedula}</span>
+              <span className="font-bold text-gray-600">Cédula:</span>
+              <span className="text-gray-400">{user.cedula}</span>
             </div>
           </div>
         </div>
