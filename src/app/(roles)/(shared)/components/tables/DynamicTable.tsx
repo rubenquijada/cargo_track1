@@ -57,8 +57,8 @@ export default function DynamicTable<T extends object>({
                 </DynamicHeader>
             )}
             <div className="overflow-auto max-w-full">
-            <table className="min-w-full text-sm text-gray-700 table-fixed overflow-hidden border border-gray-200 rounded-lg">
-                <thead className="bg-gradient-to-r from-blue-800 to-green-600 text-white uppercase tracking-wide text-sm">
+            <table className="min-w-full text-sm text-gray-500 table-fixed overflow-hidden border border-gray-200 rounded-lg">
+                <thead className="bg-gradient-to-r from-green-600 to-green-400 text-black uppercase tracking-wide text-sm">
                     <tr>
                         {columns.map((col) => (
                             <th
@@ -114,7 +114,7 @@ export default function DynamicTable<T extends object>({
                             onClick={() => setPage(i)}
                             className={`px-3 py-1 text-sm rounded-md transition-all ${
                                 page === i
-                                    ? "bg-purple-700 text-white"
+                                    ? "bg-gray-700 text-white"
                                     : "bg-gray-100 hover:bg-gray-200"
                             }`}>
                             {i + 1}
