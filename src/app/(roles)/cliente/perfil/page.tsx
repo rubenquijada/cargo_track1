@@ -9,28 +9,28 @@ export default function PerfilClientePage() {
       {/* Tarjeta blanca sobre fondo negro heredado */}
       <div className="bg-white text-black p-6 rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <UserCircle className="h-6 w-6 text-purple-600" />
+          <UserCircle className="h-6 w-6 text-green-300" />
           Mi perfil
         </h2>
 
         <ul className="space-y-4 text-lg">
           <li className="flex items-center gap-3">
-            <MailOpen className="h-5 w-5 text-purple-500" />
+            <MailOpen className="h-5 w-5 text-green-300" />
             <span>juanperez@example.com</span>
           </li>
           <li className="flex items-center gap-3">
-            <PhoneCall className="h-5 w-5 text-purple-500" />
+            <PhoneCall className="h-5 w-5 text-green-300" />
             <span>00000000000</span>
           </li>
           <li className="flex items-center gap-3">
-            <MapPinned className="h-5 w-5 text-purple-500" />
+            <MapPinned className="h-5 w-5 text-green-300" />
             <span>Avenida venga la alegría</span>
           </li>
         </ul>
 
         <div className="mt-6 text-right">
           <Link href="/cliente/perfil/editar">
-            <button className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition">
+            <button className="bg-green-300 text-gray-700 px-4 py-2 rounded-md hover:bg-green-400 transition">
               Editar perfil
             </button>
           </Link>
