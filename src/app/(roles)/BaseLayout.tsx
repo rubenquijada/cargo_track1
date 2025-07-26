@@ -32,7 +32,7 @@ export function BaseLayout({
     router.push('/');
   };
   return (
-    <div className="grid grid-cols-[16rem_1fr] min-h-screen bg-black text-white relative">
+    <div className="grid grid-cols-[16rem_1fr] min-h-screen bg-black text-blue relative">
       {/* Sidebar */}
       <aside className="bg-[#313793] p-6 sticky top-0 h-screen flex flex-col z-10">
         {/* Perfil */}
@@ -84,7 +84,7 @@ export function BaseLayout({
       </aside>
 
       {/* Panel derecho */}
-      <main className="flex flex-col min-h-screen bg-black">
+      <main className="flex flex-col min-h-screen bg-gray-100">
         <section className="flex-grow p-6">{children}</section>
         <footer className="text-center py-4 text-sm text-gray-500">
           CargoTruck 2025 — Todos los derechos reservados
