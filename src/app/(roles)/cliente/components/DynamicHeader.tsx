@@ -28,13 +28,13 @@ export default function DynamicHeader({
             onChange={onChange}
             type="text"
             placeholder="🔍 Buscar"
-            className="border border-gray-300 focus:border-purple-600 focus:ring-purple-600 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
+            className="border border-gray-300 focus:border-green-300 focus:ring-green-300 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
           />
 
           <select
             value={filtro}
             onChange={onChangeFilter}
-            className="border border-gray-300 focus:border-purple-600 focus:ring-purple-600 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
+            className="border border-gray-300 focus:border-green-300 focus:ring-green-300 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
           >
             {columnasVisibles.length === 0 ? (
               <option value="">No hay opciones</option>
