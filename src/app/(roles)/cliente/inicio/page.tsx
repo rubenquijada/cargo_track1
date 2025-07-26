@@ -45,11 +45,11 @@ export default function ClienteDashboard() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       {/* Encabezado */}
-      <h1 className="text-4xl font-bold tracking-tight mb-2">
-        ¡Hola, <span className="text-gray-700">{nombre}</span>!
+      <h1 className="text-2xl font-bold tracking-tight mb-2">
+        Bienvenido, <span className="text-gray-700">{nombre}</span>
       </h1>
       <p className="text-gray-700 text-lg mb-6">
-        Aquí tienes un resumen de tus actividades recientes
+        Que desea ver hoy?
       </p>
 
       {/* Tarjetas resumen */}
