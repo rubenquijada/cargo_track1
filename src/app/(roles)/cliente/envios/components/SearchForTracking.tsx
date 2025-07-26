@@ -11,11 +11,11 @@ export default function SectionHeader({ name }: Props) {
         <input
           type="text"
           placeholder="🔍 Buscar por tracking..."
-          className="border border-gray-300 focus:border-purple-600 focus:ring-purple-600 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
+          className="border border-gray-300 focus:border-green-400 focus:ring-green-400 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
         />
 
         <select
-          className="border border-gray-300 focus:border-purple-600 focus:ring-purple-600 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
+          className="border border-gray-300 focus:border-green-400 focus:ring-green-400 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
         >
           <option value="">🎯 Todos los estados</option>
           <option value="REGISTRADO">📝 Registrado</option>
