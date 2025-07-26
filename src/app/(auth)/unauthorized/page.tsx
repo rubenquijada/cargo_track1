@@ -16,7 +16,7 @@ export default function UnauthorizedPage() {
           </p>
 
 
-                    <button   className="inline-block w-full rounded-md bg-purple-700 py-2 text-white font-semibold hover:bg-purple-800 transition" onClick={() => history.back()}>
+                    <button   className="inline-block w-full rounded-md bg-green-300 py-2 text-gray-700 font-semibold hover:bg-green-300 transition" onClick={() => history.back()}>
   Volver atrás
 </button>
         </div>

@@ -46,7 +46,7 @@ export default function ClienteDashboard() {
     >
       {/* Encabezado */}
       <h1 className="text-4xl font-bold tracking-tight mb-2">
-        ¡Hola, <span className="text-red-400">{nombre}</span>!
+        ¡Hola, <span className="text-gray-700">{nombre}</span>!
       </h1>
       <p className="text-gray-700 text-lg mb-6">
         Aquí tienes un resumen de tus actividades recientes
@@ -56,19 +56,19 @@ export default function ClienteDashboard() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Paquetes */}
         <motion.div
-          className="bg-gradient-to-br from-gray-300 to-purple-900 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
+          className="bg-gradient-to-br from-gray-400 to-gray-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-xl font-semibold mb-1">Mis paquetes</h2>
-              <p className="text-sm text-gray-300">Gestión de tus paquetes</p>
+              <p className="text-sm text-gray-600">Gestión de tus paquetes</p>
             </div>
             <Package className="w-8 h-8 text-purple-100" />
           </div>
           <ul className="text-sm space-y-1">
             <li>Total: {paquetes.total}</li>
-            <li className="text-blue-200">En tránsito: {paquetes.transito}</li>
-            <li className="text-yellow-200">Pendientes: {paquetes.pendientes}</li>
+            <li className="text-blue-600">En tránsito: {paquetes.transito}</li>
+            <li className="text-yellow-300">Pendientes: {paquetes.pendientes}</li>
           </ul>
         </motion.div>
 
@@ -98,7 +98,7 @@ export default function ClienteDashboard() {
               <h2 className="text-xl font-semibold mb-1">Último envío</h2>
               <p className="text-sm text-gray-700">Estado más reciente</p>
             </div>
-            <Truck className="w-8 h-8 text-purple-800" />
+            <Truck className="w-8 h-8 text-purple-300" />
           </div>
           <ul className="text-sm space-y-1">
             <li>Código: {ultimoEnvio.codigo}</li>
