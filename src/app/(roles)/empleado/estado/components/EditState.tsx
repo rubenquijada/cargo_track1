@@ -44,7 +44,7 @@ export const EditState: React.FC<EstadoEditableProps> = ({
       className={`border rounded p-1 ${
         estado === "EN ALMACEN"
           ? "text-gray-500 cursor-not-allowed"
-          : "text-blue-600 underline"
+          : "text-blue-600 hover:text-blue-800 transition-colors"
       }`}
     >
       {estado || "Ver detalles"}
