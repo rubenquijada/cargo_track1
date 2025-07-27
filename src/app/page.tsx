@@ -15,7 +15,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white text-black">
       <nav className="bg-white px-8 py-4 flex justify-between items-center border-b border-gray-100">
         <h1 className="text-2xl font-bold text-black-500">CargoTrack</h1>
-        </nav>{/*<div className="space-x-4">
+      </nav>
+      {/*<div className="space-x-4">
           <Link
             href="/login?tipo=cliente"
             className="bg-white text-black px-5 py-2 rounded-lg hover:bg-gray-100 transition"
@@ -75,6 +76,7 @@ export default function Home() {
       <footer className="bg-white py-4 text-center text-sm text-gray-600 border-t border-gray-100">
         © {new Date().getFullYear()} CargoTrack. Todos los derechos reservados.
       </footer>
-    </div> ... */}</div>
+    </div> ... */}
+    </div>
   );
 }
