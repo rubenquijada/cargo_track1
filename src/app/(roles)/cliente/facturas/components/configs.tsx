@@ -44,10 +44,10 @@ export const columns = [
       <button
         disabled={row.estado === "PAGADA"}
         onClick={() => alert(`Proceder al pago de factura #${row.numero}`)}
-        className={`text-blue-600 underline px-2 py-1 rounded ${
+        className={`text-blue-400 px-2 py-1 rounded ${
           row.estado === "PAGADA"
             ? "opacity-50 cursor-not-allowed"
-            : "hover:text-blue-800"
+            : "hover:text-blue-400"
         }`}
       >
         Pagar deuda
