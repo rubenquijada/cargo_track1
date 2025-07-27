@@ -59,9 +59,8 @@ export function BaseLayout({
         </div>
       </nav>
 
-      <div className="grid grid-cols-[16rem_1fr] min-h-screen bg-gray-400 text-blue relative">
-        {/* Sidebar */}
-        <aside className="bg-gray-400 p-6 sticky top-0 h-20 flex flex-col z-10">
+      <nav className="bg-white px-3 py-2 flex justify-between items-center border-b border-gray-100">
+        
           {/* Navegación */}
           <nav className="flex flex-row gap-4 relative z-10 justify-center">
             {sidebarItems.map(({ href, icon, label }) => {
@@ -76,7 +75,7 @@ export function BaseLayout({
           ${
             isActive
               ? "bg-black text-white shadow-md rounded-full"
-              : "text-white hover:bg-[#141415] hover:text-white rounded-xl"
+              : "text-black hover:bg-gray-600 hover:text-gray-100 rounded-xl"
           }`}
                 >
                   <span>{icon}</span>
@@ -85,7 +84,12 @@ export function BaseLayout({
               );
             })}
           </nav>
-        </aside>
+       
+        <div></div>
+      </nav>
+
+      
+        {/* Sidebar */}
 
         {/* Panel derecho */}
         <main className="flex flex-col min-h-screen bg-gray-100">
@@ -94,7 +98,7 @@ export function BaseLayout({
             Cargo-Track 2025 — Todos los derechos reservados
           </footer>
         </main>
-      </div>
+      
     </div>
   );
 }
