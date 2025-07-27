@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-import { motion } from 'framer-motion';
-import { Truck, Package, FileText } from 'lucide-react';
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import { Truck, Package, FileText } from "lucide-react";
 
 export default function ClienteDashboard() {
-  const [nombre, setNombre] = useState('');
+  const [nombre, setNombre] = useState("");
 
   const paquetes = {
     total: 6,
@@ -20,19 +20,19 @@ export default function ClienteDashboard() {
   };
 
   const ultimoEnvio = {
-    codigo: 'ENV123456',
-    estado: 'En tránsito',
+    codigo: "ENV123456",
+    estado: "En tránsito",
   };
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
     if (user.nombre) {
       setNombre(user.nombre);
 
-      const alreadyWelcomed = sessionStorage.getItem('bienvenida-mostrada');
+      const alreadyWelcomed = sessionStorage.getItem("bienvenida-mostrada");
       if (!alreadyWelcomed) {
         toast.success(`Bienvenido, ${user.nombre}`);
-        sessionStorage.setItem('bienvenida-mostrada', 'true');
+        sessionStorage.setItem("bienvenida-mostrada", "true");
       }
     }
   }, []);
@@ -42,69 +42,51 @@ export default function ClienteDashboard() {
       className="flex flex-col h-full bg-gray-100 text-gray-800"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Encabezado */}
       <h1 className="text-2xl font-bold tracking-tight mb-2">
         Bienvenido, <span className="text-gray-700">{nombre}</span>
       </h1>
-      <p className="text-gray-700 text-lg mb-6">
-        Que desea ver hoy?
-      </p>
+      <p className="text-gray-700 text-lg mb-6">Que desea ver hoy?</p>
 
       {/* Tarjetas resumen */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Paquetes */}
-        <motion.div
-          className="bg-gradient-to-br from-green-300 to-green-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-xl font-semibold mb-1">Mis paquetes</h2>
-              <p className="text-sm text-gray-600">Gestión de tus paquetes</p>
-            </div>
-            <Package className="w-8 h-8 text-purple-100" />
+        <div className="bg-white p-6 rounded-lg shadow-md flex items-center gap-4">
+          <Truck className="h-8 w-8 text-blue-600" />
+          <div>
+            <h3 className="text-xl font-semibold">Envíos</h3>
+            <p>Total: {paquetes.total}</p>
+            <p>En tránsito: {paquetes.transito}</p>
+            <p>Pendientes: {paquetes.pendientes}</p>
           </div>
-          <ul className="text-sm space-y-1">
-            <li>Total: {paquetes.total}</li>
-            <li className="text-blue-600">En tránsito: {paquetes.transito}</li>
-            <li className="text-yellow-300">Pendientes: {paquetes.pendientes}</li>
-          </ul>
-        </motion.div>
+        </div>
 
-        {/* Facturas */}
-        <motion.div
-          className="bg-gradient-to-br from-blue-300 to-blue-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-xl font-semibold mb-1">Mis facturas</h2>
-              <p className="text-sm text-gray-600">Resumen de tus pagos</p>
-            </div>
-            <FileText className="w-8 h-8 text-blue-100" />
+        <div className="bg-white p-6 rounded-lg shadow-md flex items-center gap-4">
+          <Package className="h-8 w-8 text-green-600" />
+          <div>
+            <h3 className="text-xl font-semibold">Paquetes</h3>
+            <p>Total: {paquetes.total}</p>
+            <p>En tránsito: {paquetes.transito}</p>
+            <p>Pendientes: {paquetes.pendientes}</p>
           </div>
-          <ul className="text-sm space-y-1">
-            <li className="text-yellow-100">Pendientes: {facturas.pendientes}</li>
-            <li className="text-green-200">Pagadas: {facturas.pagadas}</li>
-          </ul>
-        </motion.div>
+        </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-md flex items-center gap-4">
+          <FileText className="h-8 w-8 text-yellow-600" />
+          <div>
+            <h3 className="text-xl font-semibold">Facturas</h3>
+            <p>Pendientes: {facturas.pendientes}</p>
+            <p>Pagadas: {facturas.pagadas}</p>
+          </div>
+        </div>
 
         {/* Último envío */}
-        <motion.div
-          className="bg-gradient-to-br from-purple-100 to-purple-300 text-black rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-xl font-semibold mb-1">Último envío</h2>
-              <p className="text-sm text-gray-700">Estado más reciente</p>
-            </div>
-            <Truck className="w-8 h-8 text-purple-400" />
-          </div>
-          <ul className="text-sm space-y-1">
-            <li>Código: {ultimoEnvio.codigo}</li>
-            <li className="text-blue-700">Estado: {ultimoEnvio.estado}</li>
-          </ul>
-        </motion.div>
+        <div className="bg-white p-6 rounded-lg shadow-md col-span-full">
+          <h3 className="text-xl font-semibold mb-2">Último Envío</h3>
+          <p>Código: {ultimoEnvio.codigo}</p>
+          <p>Estado: {ultimoEnvio.estado}</p>
+        </div>
       </section>
     </motion.div>
   );
