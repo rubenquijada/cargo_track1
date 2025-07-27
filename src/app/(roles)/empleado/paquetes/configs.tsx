@@ -131,9 +131,9 @@ export const getColumns: any = (
         render: (_: any, row: any) => (
             <button
                 onClick={() => handleEdit(row)}
-                className="text-blue-600 hover:text-blue-800 transition-colors"
+                className="text-blue-400 hover:text-blue-500 transition-colors"
             >
-                ✎ Editar
+                Editar
             </button>
         ),
     },
@@ -143,9 +143,9 @@ export const getColumns: any = (
         render: (_: any, row: any) => (
             <button
                 onClick={() => handleDelete(row.tracking)}
-                className="text-red-600 hover:text-red-800 transition-colors"
+                className="text-blue-400 hover:text-blue-500 transition-colors"
             >
-                ✕ Eliminar
+                Eliminar
             </button>
         ),
     },

@@ -70,7 +70,7 @@ export const getColumns: any = (
         render: (_: any, row: any) => (
             <button
                 onClick={()=> { handleEdit(row)}}
-                className="text-blue-600 underline">
+                className="text-blue-400 ">
                 Editar
             </button>
         ),
@@ -81,7 +81,7 @@ export const getColumns: any = (
         render: (_: any, row: any) => (
             <button
                 onClick={() => handleDelete(row.codigo)}
-                className="text-blue-600 underline">
+                className="text-blue-400 ">
                 Eliminar
             </button>
         ),

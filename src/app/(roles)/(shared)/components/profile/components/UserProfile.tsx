@@ -35,21 +35,13 @@ export default function UserProfile() {
 
   return (
     <motion.div
-      className="flex justify-center items-center min-h-screen bg-transparent text-white font-sans p-8"
+      className="flex justify-center items-center  bg-transparent text-white font-sans p-8"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center p-8 rounded-xl max-w-xl w-full shadow-lg bg-gray-200">
-        <div className="bg-white rounded-full w-32 h-32 flex items-center justify-center mb-6">
-          <svg
-            className="w-20 h-20 text-black"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
-          </svg>
-        </div>
+      <div className="flex flex-col items-center p-2 rounded-xl max-w-xl w-full shadow-lg bg-gray-200">
+        
 
         <h1 className="text-3xl font-bold mb-2 text-gray-600">{user.nombre}</h1>
         <p className="text-lg text-gray-400 mb-10">{user.email}</p>
