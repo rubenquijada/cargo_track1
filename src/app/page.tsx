@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
-      <nav className="bg-white px-8 py-4 flex justify-between items-center border-b border-gray-100">
+      {/*<nav className="bg-white px-8 py-4 flex justify-between items-center border-b border-gray-100">
         <h1 className="text-2xl font-bold text-black-500">CargoTrack</h1>
       </nav>
       {/*<div className="space-x-4">
