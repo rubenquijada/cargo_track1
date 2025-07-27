@@ -64,7 +64,7 @@ export default function ClienteDashboard() {
       <h1 className="text-2xl font-bold tracking-tight mb-2">
         Bienvenid@ estimad@ cliente: <span className="text-gray-700">{nombre}</span>
       </h1>
-      <p className="text-gray-700 text-lg mb-6">Que desea ver hoy?</p>
+      <p className="text-gray-700 text-lg mb-6">¿Qué desea ver hoy?</p>
 
       {/* Tarjetas resumen */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
