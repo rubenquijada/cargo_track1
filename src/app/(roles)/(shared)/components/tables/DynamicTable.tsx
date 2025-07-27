@@ -58,7 +58,7 @@ export default function DynamicTable<T extends object>({
             )}
             <div className="overflow-auto max-w-full">
             <table className="min-w-full text-sm text-gray-500 table-fixed overflow-hidden border border-gray-200 rounded-lg">
-                <thead className="bg-gradient-to-r from-green-600 to-green-400 text-black uppercase tracking-wide text-sm">
+                <thead className="bg-gradient-to-r from-blue-300 to-blue-300 text-black uppercase tracking-wide text-sm">
                     <tr>
                         {columns.map((col) => (
                             <th
