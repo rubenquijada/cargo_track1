@@ -7,7 +7,7 @@ import { Warehouse, Users } from 'lucide-react';
 
 export default function AdminInicioPage() {
   const [nombre, setNombre] = useState("");
-  useEffect(effect => {
+  useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     if (user.nombre) {
       setNombre(user.nombre);
