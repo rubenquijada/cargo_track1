@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
@@ -10,6 +11,13 @@ import {
 } from 'lucide-react';
 
 export default function EmpleadoInicioPage() {
+  const [nombre, setNombre] = useState("");
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    if (user.nombre) {
+      setNombre(user.nombre);
+    }
+  }, []);
   return (
     <motion.main
       className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-black"
@@ -19,7 +27,7 @@ export default function EmpleadoInicioPage() {
     >
       {/* Bienvenida */}
       <h1 className="text-gray-700 text-4xl font-bold tracking-tight mb-2">
-        <span className="text-gray-900">¡Bienvenido</span> <span className="text-gray-900">Empleado!</span>
+        <span className="text-gray-900">Te damos la bienvenida Emplead@: <>{nombre}</></span>
       </h1>
       <p className="text-gray-600 text-lg mb-6">
         Panel de control de tus actividades diarias

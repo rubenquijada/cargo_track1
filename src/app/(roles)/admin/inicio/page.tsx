@@ -1,10 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Warehouse, Users } from 'lucide-react';
 
 export default function AdminInicioPage() {
+  const [nombre, setNombre] = useState("");
+  useEffect(effect => {
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    if (user.nombre) {
+      setNombre(user.nombre);
+    }
+  }, []);
   return (
     <motion.main
       className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-black"
@@ -13,7 +21,7 @@ export default function AdminInicioPage() {
       transition={{ duration: 0.1, ease: 'easeOut' }}
     >
       <h1 className="text-2xl font-bold tracking-tight mb-2">
-       <span className="text-gray-700">Bienvenido a</span> <span className="text-gray-700">Administrador</span>
+       <span className="text-gray-700">Bienvenido {nombre}</span> <span className="text-gray-700"></span>
       </h1>
       <p className="text-gray-700 text-lg mb-6">
         Panel de gestión del sistema
