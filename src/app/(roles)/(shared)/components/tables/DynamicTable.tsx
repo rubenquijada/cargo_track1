@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DynamicTableProps } from "./types";
 
 import { motion } from "framer-motion";
@@ -14,15 +14,32 @@ export default function DynamicTable<T extends object>({
   idName = "codigo",
 }: DynamicTableProps<T>) {
   const [filtro, setFiltro] = useState(columns[0].key);
+  const [debouncedFiltro, setDebouncedFiltro] = useState(columns[0].key);
   const [busqueda, setBusqueda] = useState("");
-  console.log(data);
+  const [debouncedBusqueda, setDebouncedBusqueda] = useState(""); // Nuevo estado
   const [page, setPage] = useState(0);
 
-  const filteredData = busqueda
+  // Retraso de 1.5 segundos para el filtro
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedBusqueda(busqueda);
+    }, 2500);
+
+    return () => clearTimeout(handler);
+  }, [busqueda]);
+
+  useEffect(() => {
+  const handler = setTimeout(() => {
+    setDebouncedFiltro(filtro);
+  }, 3500);
+    return () => clearTimeout(handler);
+  },[filtro]);
+
+  const filteredData = debouncedBusqueda
     ? data.filter((row) =>
         String((row as any)[filtro])
           .toLowerCase()
-          .includes(busqueda.toLowerCase())
+          .includes(debouncedBusqueda.toLowerCase())
       )
     : data;
 
@@ -60,7 +77,7 @@ export default function DynamicTable<T extends object>({
       )}
       <div className="overflow-auto max-w-full">
         <table className="min-w-full text-sm text-gray-500 table-fixed overflow-hidden border border-gray-200 rounded-lg">
-          <thead className="bg-gradient-to-r from-green-600 to-green-400 text-black uppercase tracking-wide text-sm">
+          <thead className="bg-gradient-to-r from-gray-200 to-gray-200 text-black  tracking-wide text-sm">
             <tr>
               {columns.map((col) => (
                 <th key={String(col.key)} className="px-4 py-3 text-left">
