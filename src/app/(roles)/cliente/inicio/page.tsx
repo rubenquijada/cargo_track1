@@ -56,7 +56,7 @@ export default function ClienteDashboard() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Paquetes */}
         <motion.div
-          className="bg-gradient-to-br from-gray-400 to-gray-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
+          className="bg-gradient-to-br from-green-300 to-green-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -74,12 +74,12 @@ export default function ClienteDashboard() {
 
         {/* Facturas */}
         <motion.div
-          className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
+          className="bg-gradient-to-br from-blue-300 to-blue-400 rounded-2xl p-6 shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.02]"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-xl font-semibold mb-1">Mis facturas</h2>
-              <p className="text-sm text-gray-300">Resumen de tus pagos</p>
+              <p className="text-sm text-gray-600">Resumen de tus pagos</p>
             </div>
             <FileText className="w-8 h-8 text-blue-100" />
           </div>
@@ -98,7 +98,7 @@ export default function ClienteDashboard() {
               <h2 className="text-xl font-semibold mb-1">Último envío</h2>
               <p className="text-sm text-gray-700">Estado más reciente</p>
             </div>
-            <Truck className="w-8 h-8 text-purple-300" />
+            <Truck className="w-8 h-8 text-purple-400" />
           </div>
           <ul className="text-sm space-y-1">
             <li>Código: {ultimoEnvio.codigo}</li>
