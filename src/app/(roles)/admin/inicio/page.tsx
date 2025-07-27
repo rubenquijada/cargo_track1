@@ -7,11 +7,24 @@ import { Warehouse, Users } from 'lucide-react';
 
 export default function AdminInicioPage() {
   const [nombre, setNombre] = useState("");
+  const [usuariosCount, setUsuariosCount] = useState(0);
+  const [almacenesCount, setAlmacenesCount] = useState(0);
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     if (user.nombre) {
       setNombre(user.nombre);
     }
+
+    // Obtener cantidad de usuarios
+    fetch("/api/usuarios/count")
+      .then(res => res.json())
+      .then(data => setUsuariosCount(data.count));
+
+    // Obtener cantidad de almacenes
+    fetch("/api/almacenes/count")
+      .then(res => res.json())
+      .then(data => setAlmacenesCount(data.count));
   }, []);
   return (
     <motion.main
@@ -36,7 +49,7 @@ export default function AdminInicioPage() {
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-4xl font-bold">23</h2>
+              <h2 className="text-4xl font-bold">{usuariosCount}</h2>
               <p className="text-sm text-black">Usuarios registrados</p>
             </div>
             <Users className="w-10 h-10 text-blue-700" />
@@ -50,7 +63,7 @@ export default function AdminInicioPage() {
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-4xl font-bold">5</h2>
+              <h2 className="text-4xl font-bold">{almacenesCount}</h2>
               <p className="text-sm text-black">Almacenes activos</p>
             </div>
             <Warehouse className="w-10 h-10 text-green-600" />
@@ -58,21 +71,7 @@ export default function AdminInicioPage() {
         </motion.div>
       </section>
 
-      {/* Accesos rápidos */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <Link
-          href="/admin/usuarios"
-          className="bg-white hover:bg-white text-black text-center font-semibold py-8 px-4 rounded-2xl transition text-lg shadow-md "
-        >
-          Gestionar usuarios
-        </Link>
-        <Link
-          href="/admin/almacen"
-          className="bg-white hover:bg-white text-black text-center font-semibold py-8 px-4 rounded-2xl transition text-lg shadow-md"
-        >
-          Ver almacenes
-        </Link>
-      </section>
+      
     </motion.main>
   );
 }
