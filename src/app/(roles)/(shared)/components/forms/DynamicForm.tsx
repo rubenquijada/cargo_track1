@@ -116,7 +116,7 @@ export default function DynamicForm<TData>({
                 <div className="flex flex-wrap justify-end gap-4 pt-2">
                     <button
                         type="submit"
-                        className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg shadow-sm transition-all">
+                        className="bg-gray-900 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-sm transition-all">
                         Enviar
                     </button>
 
