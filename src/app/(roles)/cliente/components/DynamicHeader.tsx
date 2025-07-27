@@ -21,13 +21,13 @@ export default function DynamicHeader({
   return (
     <header>
       <div className="space-y-6 mb-6">
-        <h1 className="text-3xl font-semibold text-gray-100">{h1Text}{children}</h1>
+        <h1 className="text-3xl font-semibold text-gray-600">{h1Text}{children}</h1>
 
         <div className="flex flex-col md:flex-row gap-4">
           <input
             onChange={onChange}
             type="text"
-            placeholder="🔍 Buscar"
+            placeholder="Buscar"
             className="border border-gray-300 focus:border-green-300 focus:ring-green-300 rounded-lg px-4 py-2 w-full md:w-1/3 shadow-sm transition-all text-gray-700"
           />
 
