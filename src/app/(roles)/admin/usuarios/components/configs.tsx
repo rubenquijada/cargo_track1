@@ -70,7 +70,7 @@ export const getColumns = (
     key: "editar",
     label: "Editar",
     render: (_: any, row: any) => (
-      <button onClick={() => handleEdit(row)} className="text-blue-600 underline">
+      <button onClick={() => handleEdit(row)} className="text-blue-400 underline">
         Editar
       </button>
     ),
@@ -79,7 +79,7 @@ export const getColumns = (
     key: "eliminar",
     label: "Eliminar",
     render: (_: any, row: any) => (
-      <button onClick={() => handleDelete(row.id)} className="text-blue-600 underline">
+      <button onClick={() => handleDelete(row.id)} className="text-blue-400 underline">
         Eliminar
       </button>
     ),
