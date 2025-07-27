@@ -7,22 +7,9 @@ import { Truck, Package, FileText } from "lucide-react";
 
 export default function ClienteDashboard() {
   const [nombre, setNombre] = useState("");
-
-  const paquetes = {
-    total: 6,
-    transito: 3,
-    pendientes: 1,
-  };
-
-  const facturas = {
-    pendientes: 2,
-    pagadas: 4,
-  };
-
-  const ultimoEnvio = {
-    codigo: "ENV123456",
-    estado: "En tránsito",
-  };
+  const [paquetes, setPaquetes] = useState({ total: 0, transito: 0, pendientes: 0 });
+  const [facturas, setFacturas] = useState({ pendientes: 0, pagadas: 0 });
+  const [ultimoEnvio, setUltimoEnvio] = useState({ codigo: "", estado: "" });
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -35,6 +22,35 @@ export default function ClienteDashboard() {
         sessionStorage.setItem("bienvenida-mostrada", "true");
       }
     }
+
+    // Obtener datos de paquetes
+    fetch(`/api/paquetes?clienteId=${user.id}`)
+      .then(res => res.json())
+      .then(data => {
+        const total = data.length;
+        const transito = data.filter((p: any) => p.estado === "EN_TRANSITO").length;
+        const pendientes = data.filter((p: any) => p.estado === "REGISTRADO").length;
+        setPaquetes({ total, transito, pendientes });
+      });
+
+    // Obtener datos de facturas
+    fetch(`/api/facturas?clienteId=${user.id}`)
+      .then(res => res.json())
+      .then(data => {
+        const pendientes = data.filter((f: any) => f.estado === "PENDIENTE").length;
+        const pagadas = data.filter((f: any) => f.estado === "PAGADA").length;
+        setFacturas({ pendientes, pagadas });
+      });
+
+    // Obtener último envío
+    fetch(`/api/envios/cliente?clienteId=${user.id}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.length > 0) {
+          const ultimo = data[data.length - 1];
+          setUltimoEnvio({ codigo: ultimo.numero, estado: ultimo.estado });
+        }
+      });
   }, []);
 
   return (
