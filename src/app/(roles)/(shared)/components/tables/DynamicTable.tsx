@@ -57,7 +57,7 @@ export default function DynamicTable<T extends object>({
                 </DynamicHeader>
             )}
             <div className="overflow-auto max-w-full">
-            <table className="min-w-full text-sm text-gray-500 table-fixed overflow-hidden border border-gray-200 rounded-lg">
+            <table className="min-w-full text-sm text-gray-800 table-fixed overflow-hidden border border-gray-200 rounded-lg">
                 <thead className="bg-gradient-to-r from-green-600 to-green-400 text-black uppercase tracking-wide text-sm">
                     <tr>
                         {columns.map((col) => (
@@ -75,7 +75,7 @@ export default function DynamicTable<T extends object>({
         paginatedData.map((row, idx) => (
             <tr
                 key={idx}
-                className="border-b hover:bg-gray-50 transition-all">
+                className="border-b hover:bg-gray-200 transition-all">
                 {columns.map((col) => (
                     <td
                         key={String(col.key)}
@@ -91,7 +91,7 @@ export default function DynamicTable<T extends object>({
         <tr>
             <td
                 colSpan={columns.length}
-                className="px-4 py-6 text-center text-gray-500 italic">
+                className="px-4 py-6 text-center text-gray-900 italic">
                 No hay datos para mostrar. Intenta ajustar los filtros o busca algo diferente.
             </td>
         </tr>
