@@ -18,13 +18,13 @@ export const ShipmentsTable = () => {
         try {
             row.estado = nuevoEstado;
             console.log(row);
+            // Después de actualizar, updater() debe volver a cargar todos los datos
             await envioEstadoService.actualizar(row[id], row);
+            updater(); // Esto debe refrescar la lista completa
             alert("Estado actualizado correctamente.");
-            updater();
         } catch (err) {
             alert("Hubo un error al actualizar el estado.");
             console.error(err);
-            updater();
         }
     };
 

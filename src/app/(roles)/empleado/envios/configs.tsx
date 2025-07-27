@@ -74,17 +74,7 @@ export const getColumns: any = (handleCheck: (row: any, checked: boolean) => voi
     { key: "medidas.alto", label: "Alto" },
     { key: "medidas.largo", label: "Largo" },
     { key: "medidas.volumen", label: "Volumen" },
-    {
-        key: "seleccionado",
-        label: "Seleccionar",
-        render: (_: any, row: any) => (
-  <input
-    checked={Array.isArray(array) && array.some((item: any) => item[id] === row[id])}
-    type="checkbox"
-    onChange={(e) => handleCheck(row, e.target.checked)}
-  />
-),
-    },
+   
 ];
 
 
@@ -156,19 +146,5 @@ export const columns: Column<Package>[] = [
   { key: "alto", label: "Alto" },
   { key: "fecha", label: "Fecha" },
   { key: "tipo", label: "Tipo" },
-  {
-        key: "seleccionado",
-        label: "Seleccionar",
-        render: (_: any, row: any) => (
-            <input
-                type="checkbox"
-                checked={row.seleccionado}
-                onChange={(e) => {
-                    console.log(
-                        `Fila ${row.cod} seleccionada: ${e.target.checked}`
-                    );
-                }}
-            />
-        ),
-    },
+ 
 ];

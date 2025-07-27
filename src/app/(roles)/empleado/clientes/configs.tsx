@@ -11,7 +11,7 @@
       render: (_: any, row: any) => (
         <button
           onClick={() => setModalInfo({ tipo: "paquetes", id: row.id })}
-          className="text-blue-600 underline"
+          className="text-blue-400 "
         >
           Ver paquetes
         </button>
@@ -23,7 +23,7 @@
       render: (_: any, row: any) => (
         <button
           onClick={() => setModalInfo({ tipo: "facturas", id: row.id })}
-          className="text-blue-600 underline"
+          className="text-blue-400 "
         >
           Ver facturas
         </button>

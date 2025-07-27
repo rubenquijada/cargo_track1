@@ -127,7 +127,7 @@ export default function DynamicTable<T extends object>({
               disabled={page === 0}
               className="px-3 py-1 text-sm rounded-md bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
             >
-              ◀ Anterior
+               Anterior
             </button>
 
             {Array.from({ length: totalPages }, (_, i) => (
@@ -149,7 +149,7 @@ export default function DynamicTable<T extends object>({
               disabled={page >= totalPages - 1}
               className="px-3 py-1 text-sm rounded-md bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
             >
-              Siguiente ▶
+              Siguiente 
             </button>
           </div>
         )}
