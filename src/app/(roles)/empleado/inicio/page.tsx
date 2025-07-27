@@ -37,7 +37,7 @@ export default function EmpleadoInicioPage() {
               <h2 className="text-4xl font-bold">12</h2>
               <p className="text-sm text-black">Paquetes registrados hoy</p>
             </div>
-            <Package className="w-10 h-10 text-black" />
+            <Package className="w-10 h-10 text-green-600" />
           </div>
         </motion.div>
 
@@ -51,7 +51,7 @@ export default function EmpleadoInicioPage() {
               <h2 className="text-4xl font-bold">7</h2>
               <p className="text-sm text-black">Cambios de estado</p>
             </div>
-            <RefreshCcw className="w-10 h-10 text-black" />
+            <RefreshCcw className="w-10 h-10 text-yellow-600" />
           </div>
         </motion.div>
 
@@ -65,7 +65,7 @@ export default function EmpleadoInicioPage() {
               <h2 className="text-4xl font-bold">4</h2>
               <p className="text-sm text-black">Envíos asociados hoy</p>
             </div>
-            <Truck className="w-10 h-10 text-black" />
+            <Truck className="w-10 h-10 text-blue-600" />
           </div>
         </motion.div>
       </section>
