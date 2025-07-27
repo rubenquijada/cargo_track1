@@ -91,7 +91,7 @@ export default function DynamicTable<T extends object>({
         <tr>
             <td
                 colSpan={columns.length}
-                className="px-4 py-6 text-center text-gray-500 italic">
+                className="px-4 py-6 text-center text-gray-600 italic">
                 No hay datos para mostrar. Intenta ajustar los filtros o busca algo diferente.
             </td>
         </tr>
